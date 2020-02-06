@@ -9,18 +9,12 @@ import Checkbox from 'rc-checkbox';
 import 'rc-checkbox/assets/index.css';  
 
 import { Sections } from './config/sections';
-import { Languages } from './config/languages';
 
 function FormComponent(props) {
   const getSectionComponent = section => {
     switch(section.type) {
       case 'select':
-        switch(section.name) {
-          case 'language':
-            return <Select options={Languages} name={section.name} />
-          default:
-            return <Select />
-        }
+        return <Select options={section.options} name={section.name} />
       case 'checkbox':
         return <Checkbox name={section.name} />
       case 'text':

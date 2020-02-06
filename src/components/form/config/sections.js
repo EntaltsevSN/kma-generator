@@ -1,13 +1,18 @@
+import { Languages } from './languages';
+import { Styles } from './styles';
+
 export const Sections = [
   {
     'label': 'Язык формы',
     'type': 'select',
-    'name': 'language'
+    'name': 'language',
+    'options': Languages
   },
   {
     'label': 'Стиль формы',
     'type': 'select',
-    'name': 'style'
+    'name': 'style',
+    'options': Styles
   },
   {
     'label': 'Показать цены',
