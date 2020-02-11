@@ -1,5 +1,5 @@
-import { Languages } from './languages';
-import { Styles } from './styles';
+import { Languages } from '../../../config/languages';
+import { Styles } from '../../../config/styles';
 
 export const Sections = [
   {

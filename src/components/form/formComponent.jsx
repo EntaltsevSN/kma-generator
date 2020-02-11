@@ -11,14 +11,22 @@ import 'rc-checkbox/assets/index.css';
 import { Sections } from './config/sections';
 
 function FormComponent(props) {
+  const isChecked = name => { return { 'checked': (props.state[name]) && true } };
+
   const getSectionComponent = section => {
     switch(section.type) {
       case 'select':
-        return <Select options={section.options} name={section.name} />
+        return <Select options={section.options} name={section.name} onChange={
+          e => props.updateState(section.name, e.value)
+        } defaultValue={section.options[0]} />
       case 'checkbox':
-        return <Checkbox name={section.name} />
+        return <Checkbox {...isChecked(section.name)} name={section.name} onChange={
+          e => props.updateState(section.name, e.target.checked)
+        } />
       case 'text':
-        return <FormText name={section.name} />
+        return <FormText name={section.name} onChange={
+          e => props.updateState(section.name, e.target.value)
+        } value={props.state.value} />
       default:
         return <FormText />
     }

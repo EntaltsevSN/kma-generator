@@ -1,5 +1,12 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
-const FormText = styled.input``;
+import { Spacer } from '../../common/variables';
+
+const FormText = styled.input`
+  border: 2px solid #ddd;
+  border-radius: calc(${Spacer.small} / 2);
+  padding: ${Spacer.small};
+  outline: none;
+`;
 
 export default FormText;
